@@ -39,4 +39,15 @@ public class QuestionController {
         // TODO: 답변을 저장한다.
         return String.format("redirect:/question/detail/%s", id);
     }
+
+    @GetMapping("/create")
+    public String questionCreate() {
+        return "question_form";
+    }
+
+    @PostMapping("/create")
+    public String questionCreate(@RequestParam(value="subject") String subject, @RequestParam(value="content") String content) {
+        this.questionService.create(subject, content);
+        return "redirect:/question/list"; // 질문 저장후 질문목록으로 이동
+    }
 }
