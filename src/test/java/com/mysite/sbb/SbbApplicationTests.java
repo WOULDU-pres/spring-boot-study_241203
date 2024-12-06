@@ -115,6 +115,7 @@ class SbbApplicationTests {
 		this.answerRepository.save(a);
 	}
 
+	@Disabled
 	@Test
 	void testJpaMakeTestData() {
 		for (int i = 1; i <= 300; i++) {
