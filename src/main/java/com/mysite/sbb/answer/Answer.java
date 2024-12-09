@@ -1,13 +1,14 @@
 package com.mysite.sbb.answer;
 
 import com.mysite.sbb.question.Question;
-import jakarta.persistence.Lob;
-import java.time.LocalDateTime;
+import com.mysite.sbb.user.SiteUser;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
+import java.time.LocalDateTime;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,4 +27,7 @@ public class Answer {
 
     @ManyToOne
     private Question question;
+
+    @ManyToOne
+    private SiteUser author;
 }
